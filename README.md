@@ -20,16 +20,31 @@ A simple component taking only 4 params as props to work
 
 - @returns {JSX.Element} The rendered DropdownMenu component.
 
-To run it inside your project first add this library inside your own repo by using your favorite package manager and installing/adding this npm package:
+## How to Use
 
-- 'react-dropdownmenu-lib'
+1. To run it inside your project first add this library inside your own repo by using your favorite package manager and installing/adding this npm package:
 
-  Then you need to import the dropdownmenu component where you need it:
+```bash
+ npm install react-dropdownmenu-lib
+```
 
-- import DropDownMenu from 'react-dropdownmenu-lib';
+2. Then you need to import the dropdownmenu component where you need it:
 
-Finaly you can use it by calling it with the props your own props:
+```js
+import DropDownMenu from 'react-dropdownmenu-lib';
+```
 
-- <DropDownMenu listItems={yourListItemsVar} listName={yourListNameVar} selectedValue={yourSelectedValueVar}    eventListener={yourEventHandlingFunc}/>
+3. Finaly you can use it by calling it with the props your own props:
 
-Hope you enjoy it and feel free to send feedback, this is the project Git-Hub repo : https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib
+```jsx
+<DropDownMenu
+	listItems={yourListItemsVar}
+	listName={yourListNameVar}
+	selectedValue={yourSelectedValueVar}
+	eventListener={yourEventHandlingFunc}
+/>
+```
+
+Make sure to replace yourListItemsVar, yourListNameVar, yourSelectedValueVar, and yourEventHandlingFunc with your actual variable names and event handler.
+
+For more information, you can visit the project's [GitHub repository](https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib) and feel free to provide feedback or contribute!
