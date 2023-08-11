@@ -35,9 +35,13 @@ export default function DropDownMenu({
 	);
 }
 
+DropDownMenu.defaultProps = {
+	myProp: undefined
+  };
+
 DropDownMenu.propTypes = {
 	listItems: PropTypes.arrayOf(PropTypes.string).isRequired,
 	listName: PropTypes.string.isRequired,
-	selectedValue: PropTypes.string.isRequired,
+	selectedValue: PropTypes.string,
 	eventListener: PropTypes.func.isRequired,
 };
