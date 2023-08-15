@@ -2,7 +2,7 @@
 
 A simple component taking only 4 params as props to work
 
-- @param {string} props.listName - The name and id attribute of the select menu, you can use it for styling.
+- @param {string} props.listName - The name and id attribute of the select menu.
 
   - ex : myTitle = 'myComponentTitle'
 
@@ -18,9 +18,16 @@ A simple component taking only 4 params as props to work
 
   - ex: myEventListener = your custom event handler for this component
 
+- @param {string} props.className - Add the string passed as the className of the select component, use it for styling.
+
+  - ex: myEventListener = your custom event handler for this component
+
 - @returns {JSX.Element} The rendered DropdownMenu component.
 
 ## How to Use
+
+First you need to have Node installed version 18.17.0 or higher.
+This component use react library under the hood.
 
 1. To run it inside your project first add this library inside your own repo by using your favorite package manager and installing/adding this npm package:
 
@@ -42,9 +49,11 @@ import DropDownMenu from 'react-dropdownmenu-lib';
 	listName={yourListNameVar}
 	selectedValue={yourSelectedValueVar}
 	eventListener={yourEventHandlingFunc}
+	className={yourClassName}
 />
 ```
 
 Make sure to replace yourListItemsVar, yourListNameVar, yourSelectedValueVar, and yourEventHandlingFunc with your actual variable names and event handler.
+You can add an optional className to the component by adding the className prop for styling purpose.
 
 For more information, you can visit the project's [GitHub repository](https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib) and feel free to provide feedback or contribute!

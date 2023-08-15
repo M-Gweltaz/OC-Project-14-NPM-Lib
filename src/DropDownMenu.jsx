@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
  * React functional component using a plain html select tag under the hood
  *
  * @param {object} props - The props object containing the component's properties.
- * @param {string} props.listName - The name and id attribute of the select menu, you can use it for styling.
+ * @param {string} props.listName - The name and id attribute of the select menu.
  * @param {Array.<string>} props.listItems - An array of items for the dropdown menu.
  * @param {string} props.selectedValue - The currently selected value of the dropdown.
  * @param {function} props.eventListener - The event listener function for the onChange event.
+ * @param {className} props.className - Add the css class to the component for styling.
  * @returns {JSX.Element} The rendered DropdownMenu component.
  */
 
@@ -18,9 +19,11 @@ export default function DropDownMenu({
 	listItems,
 	selectedValue,
 	eventListener,
+	className,
 }) {
 	return (
 		<select
+			className={className}
 			name={listName}
 			id={listName}
 			value={selectedValue}
@@ -35,13 +38,10 @@ export default function DropDownMenu({
 	);
 }
 
-DropDownMenu.defaultProps = {
-	myProp: undefined
-  };
-
 DropDownMenu.propTypes = {
 	listItems: PropTypes.arrayOf(PropTypes.string).isRequired,
 	listName: PropTypes.string.isRequired,
 	selectedValue: PropTypes.string,
 	eventListener: PropTypes.func.isRequired,
+	className: PropTypes.string,
 };
