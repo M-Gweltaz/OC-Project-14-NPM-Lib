@@ -1,6 +1,6 @@
 # React functional DropDownMenu component
 
-A simple component taking only 4 params as props to work
+A simple component taking up to 5 params as props to work
 
 - @param {string} props.listName - The name and id attribute of the select menu.
 
@@ -19,8 +19,9 @@ A simple component taking only 4 params as props to work
   - ex: myEventListener = your custom event handler for this component
 
 - @param {string} props.className - Add the string passed as the className of the select component, use it for styling.
+  This is optional.
 
-  - ex: myEventListener = your custom event handler for this component
+  - ex: myClassNameVar = 'myCustomClassName'
 
 - @returns {JSX.Element} The rendered DropdownMenu component.
 
@@ -57,3 +58,9 @@ Make sure to replace yourListItemsVar, yourListNameVar, yourSelectedValueVar, an
 You can add an optional className to the component by adding the className prop for styling purpose.
 
 For more information, you can visit the project's [GitHub repository](https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib) and feel free to provide feedback or contribute!
+
+## Keywords
+
+- JavaScript
+- React
+- Simple DropDown Component
