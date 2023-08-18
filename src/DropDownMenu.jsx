@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
  * @param {string} props.selectedValue - The currently selected value of the dropdown.
  * @param {function} props.eventListener - The event listener function for the onChange event.
  * @param {className} props.className - Add the css class to the component for styling.
+ * @param {function|object} [props.ref] - The ref for the select element if you are using react-hook-form library for validation, optional.
  * @returns {JSX.Element} The rendered DropdownMenu component.
  */
 
@@ -20,9 +21,11 @@ export default function DropDownMenu({
 	selectedValue,
 	eventListener,
 	className,
+	ref,
 }) {
 	return (
 		<select
+			ref={ref}
 			className={className}
 			name={listName}
 			id={listName}
@@ -44,4 +47,8 @@ DropDownMenu.propTypes = {
 	selectedValue: PropTypes.string,
 	eventListener: PropTypes.func.isRequired,
 	className: PropTypes.string,
+	ref: PropTypes.oneOfType([
+		PropTypes.func,
+		PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+	]),
 };

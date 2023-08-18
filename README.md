@@ -1,10 +1,10 @@
 # React functional DropDownMenu component
 
-A simple component taking up to 5 params as props to work
+A simple component taking up to 6 params as props to work
 
-- @param {string} props.listName - The name and id attribute of the select menu.
+- @param {(string|object)} props.listName - The name and id attribute of the select menu.
 
-  - ex : myTitle = 'myComponentTitle'
+  - ex : myTitle = 'myComponentTitle' || {name: myComponentTitle, ...}
 
 - @param {Array.<string>} props.listItems - An array of items for the dropdown menu.
 
@@ -22,6 +22,13 @@ A simple component taking up to 5 params as props to work
   This is optional.
 
   - ex: myClassNameVar = 'myCustomClassName'
+
+- @param {function|object} [props.ref] - The ref for the select element if you are using react-hook-form library for validation.
+  This is optional.
+
+  - ex: {...register('myInputName', {
+    required: true,
+    })}
 
 - @returns {JSX.Element} The rendered DropdownMenu component.
 
@@ -50,12 +57,16 @@ import DropDownMenu from 'react-dropdownmenu-lib';
 	listName={yourListNameVar}
 	selectedValue={yourSelectedValueVar}
 	eventListener={yourEventHandlingFunc}
-	className={yourClassName}
+	className={yourClassName} // Optional
+	{...register('yourClassName', {
+		// Optional
+		required: true,
+	})}
 />
 ```
 
 Make sure to replace yourListItemsVar, yourListNameVar, yourSelectedValueVar, and yourEventHandlingFunc with your actual variable names and event handler.
-You can add an optional className to the component by adding the className prop for styling purpose.
+You can add an optional className to the component by adding the className prop for styling purpose and if you want simple and reliable validation you can either code your own or use [react-hook-form](https://www.react-hook-form.com/get-started) library like showed in the code exemple.
 
 For more information, you can visit the project's [GitHub repository](https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib) and feel free to provide feedback or contribute!
 
