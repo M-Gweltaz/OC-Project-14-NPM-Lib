@@ -1,6 +1,6 @@
 # React functional DropDownMenu component
 
-A simple component taking up to 6 params as props to work
+A simple component taking up to 5 params as props to work
 
 - @param {(string|object)} props.listName - The name and id attribute of the select menu.
 
@@ -22,13 +22,6 @@ A simple component taking up to 6 params as props to work
   This is optional.
 
   - ex: myClassNameVar = 'myCustomClassName'
-
-- @param {React.Ref<HTMLSelectElement>} props.ref - The ref for the select element if you are using react-hook-form library for validation.
-  This is optional.
-
-  - ex: {...register('myInputName', {
-    required: true,
-    })}
 
 - @returns {JSX.Element} The rendered DropdownMenu component.
 
@@ -52,8 +45,6 @@ import DropDownMenu from 'react-dropdownmenu-lib';
 3. Finaly you can use it by calling it with the props your own props:
 
 ```jsx
-
-// Without react-hook-form validation
 <DropDownMenu
 	listItems={department}
 	listName='department'
@@ -61,24 +52,10 @@ import DropDownMenu from 'react-dropdownmenu-lib';
 	eventListener={handleChange}
 	className='createEmployeesInput'
 />
-
-// With react-hook-form validation
-<DropDownMenu
-	listItems={department}
-	listName='department'
-	selectedValue={inputValues.department}
-	eventListener={handleChange}
-	className={`createEmployeesInput ${errors.department ? 'wrongInput' : ''}`}
-	ref={{
-		...register('department', {
-			required: true,
-		}),
-	}}
-/>
 ```
 
 Make sure to replace yourListItemsVar, yourListNameVar, yourSelectedValueVar, and yourEventHandlingFunc with your actual variable names and event handler.
-You can add an optional className to the component by adding the className prop for styling purpose and if you want simple and reliable validation you can either code your own or use [react-hook-form](https://www.react-hook-form.com/get-started) library like showed in the code exemple.
+You can add an optional className to the component by adding the className prop for styling purpose.
 
 For more information, you can visit the project's [GitHub repository](https://github.com/M-Gweltaz/OC-Project-14-NPM-Lib) and feel free to provide feedback or contribute!
 

@@ -1,14 +1,15 @@
-import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
-const DropDownMenu = React.forwardRef(function DropDownMenu(
-	{ listName, listItems, selectedValue, eventListener, className },
-	ref
-) {
+export default function DropDownMenu({
+	listName,
+	listItems,
+	selectedValue,
+	eventListener,
+	className,
+}) {
 	return (
 		<select
-			ref={ref}
 			className={className}
 			name={listName}
 			id={listName}
@@ -22,9 +23,7 @@ const DropDownMenu = React.forwardRef(function DropDownMenu(
 			))}
 		</select>
 	);
-});
-
-DropDownMenu.displayName = 'DropDownMenu';
+}
 
 DropDownMenu.propTypes = {
 	listItems: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -34,5 +33,3 @@ DropDownMenu.propTypes = {
 	eventListener: PropTypes.func.isRequired,
 	className: PropTypes.string,
 };
-
-export default DropDownMenu;
