@@ -23,7 +23,7 @@ A simple component taking up to 6 params as props to work
 
   - ex: myClassNameVar = 'myCustomClassName'
 
-- @param {function|object} [props.ref] - The ref for the select element if you are using react-hook-form library for validation.
+- @param {React.Ref<HTMLSelectElement>} props.ref - The ref for the select element if you are using react-hook-form library for validation.
   This is optional.
 
   - ex: {...register('myInputName', {
@@ -52,16 +52,28 @@ import DropDownMenu from 'react-dropdownmenu-lib';
 3. Finaly you can use it by calling it with the props your own props:
 
 ```jsx
+
+// Without react-hook-form validation
 <DropDownMenu
-	listItems={yourListItemsVar}
-	listName={yourListNameVar}
-	selectedValue={yourSelectedValueVar}
-	eventListener={yourEventHandlingFunc}
-	className={yourClassName} // Optional
-	{...register('yourClassName', {
-		// Optional
-		required: true,
-	})}
+	listItems={department}
+	listName='department'
+	selectedValue={inputValues.department}
+	eventListener={handleChange}
+	className='createEmployeesInput'
+/>
+
+// With react-hook-form validation
+<DropDownMenu
+	listItems={department}
+	listName='department'
+	selectedValue={inputValues.department}
+	eventListener={handleChange}
+	className={`createEmployeesInput ${errors.department ? 'wrongInput' : ''}`}
+	ref={{
+		...register('department', {
+			required: true,
+		}),
+	}}
 />
 ```
 
